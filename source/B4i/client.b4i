@@ -2,12 +2,14 @@
 File1=MainPage.bil
 FileGroup1=Default Group
 Group=Default Group
-Library1=icore
-Library2=b4xpages
+Library1=b4xpages
+Library2=icore
+Library3=rdc_client
 Module1=|relative|..\B4XMainPage
+Module2=|relative|..\RDCManager
 NumberOfFiles=1
-NumberOfLibraries=2
-NumberOfModules=1
+NumberOfLibraries=3
+NumberOfModules=2
 Version=8.8
 @EndOfDesignText@
 'Product: Product Name

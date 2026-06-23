@@ -3,13 +3,15 @@ Build1=Default,b4j.example
 File1=MainPage.bjl
 FileGroup1=New Group
 Group=Default Group
-Library1=jcore
-Library2=jfx
-Library3=b4xpages
+Library1=b4xpages
+Library2=jcore
+Library3=jfx
+Library4=rdc_client
 Module1=|relative|..\B4XMainPage
+Module2=|relative|..\RDCManager
 NumberOfFiles=1
-NumberOfLibraries=3
-NumberOfModules=1
+NumberOfLibraries=4
+NumberOfModules=2
 Version=10.5
 @EndOfDesignText@
 'Product: Product Name
@@ -21,9 +23,22 @@ Version=10.5
 #MainFormWidth: 600
 #MainFormHeight: 600 
 #End Region
-
-#Region  Additional Jars
-'#AdditionalJar: 
+#Region  Create Template
+'Step 1 - Create $APPNAME$ for all platforms
+#Macro: Title, Create .b4a, ide://run?File=%COMSPEC%&Args=/c&Args=copy&Args=%PROJECT%\..\B4A\client.b4a&Args=%PROJECT%\..\B4A\$APPNAME$.b4a
+#Macro: Title, Create .b4i, ide://run?File=%COMSPEC%&Args=/c&Args=copy&Args=%PROJECT%\..\B4i\client.b4i&Args=%PROJECT%\..\B4i\$APPNAME$.b4i
+#Macro: Title, Create .b4j, ide://run?File=%COMSPEC%&Args=/c&Args=copy&Args=%PROJECT%\client.b4j&Args=%PROJECT%\$APPNAME$.b4j
+'Step 2 - Open $APPNAME$.b4j
+'#Macro: Title, Open .b4a, ide://run?File=%WINDIR%\explorer.exe&Args=%PROJECT%\..\B4A\$APPNAME$.b4a
+'#Macro: Title, Open .b4i, ide://run?File=%WINDIR%\explorer.exe&Args=%PROJECT%\..\B4i\$APPNAME$.b4i
+#Macro: Title, Open .b4j, ide://run?File=%WINDIR%\explorer.exe&Args=%PROJECT%\$APPNAME$.b4j
+'Step 3 - Remove #Region Create Template in .b4j
+'Step 4 - Create jRDC3 Client.b4xtemplate
+#Macro: Title, Pack jRDC3 Client.b4xtemplate, ide://run?File=%JAVABIN%\jar.exe&WorkingDirectory=..\..&Args=-cMf&Args=..\release\jRDC3+Client+(3.60).b4xtemplate&Args=B4XMainPage.bas&Args=.gitattributes&Args=B4A\$APPNAME$.*&Args=B4A\.gitignore&Args=B4A\Files&Args=B4i\$APPNAME$.*&Args=B4i\.gitignore&Args=B4i\Files&Args=B4J\$APPNAME$.*&Args=B4J\.gitignore&Args=B4J\Files&Args=Shared+Files
+'Step 5 - Copy to B4J Additional Libraries folder
+#Macro: Title, Copy to B4X AddLibs, ide://run?File=%COMSPEC%&Args=/c&Args=copy&Args=%PROJECT%\..\..\release\B4XPages+(GitHub).b4xtemplate&Args=%ADDITIONAL%\..\B4X
+'Step 6 - Check Release folder
+#Macro: Title, Check Release folder, ide://run?File=%WINDIR%\SysWOW64\explorer.exe&Args=%PROJECT%\..\..\release
 #End Region
 Sub Process_Globals
 	Private fx As JFX
