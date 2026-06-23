@@ -19,7 +19,7 @@ End Sub
 'Example: <code> Wait For (Manager.ExecuteQuery("select_item", Array(1234))) Complete (Result As RDCResult)</code>
 Public Sub ExecuteQuery (QueryName As String, Parameters() As Object) As ResumableSub
 	Dim ser As B4XSerializator
-	Dim data() As Byte = ser.ConvertObjectToBytes(CreateMap("command": CreateMap("name": QueryName, "parameters": Parameters),  "version": VERSION))
+	Dim data() As Byte = ser.ConvertObjectToBytes(CreateMap("command": CreateMap("name": "SQL." & QueryName, "parameters": Parameters),  "version": VERSION))
 	Dim j As HttpJob
 	j.Initialize("", Me)
 	j.PostBytes(mLink & "?method=query2", data)
@@ -45,7 +45,7 @@ End Sub
 'Sends the command and asynchronously returns a RDCResult.
 'Example: <code>Wait For (Manager.ExecuteCommand("insert_item", Array("item 1", 10))) Complete (Result As RDCResult)</code>
 Public Sub ExecuteCommand(CommandName As String, Parameters() As Object) As ResumableSub
-	Dim rs As Object = ExecuteBatch(Array(CreateRDCCommand(CommandName, Parameters)))
+	Dim rs As Object = ExecuteBatch(Array(CreateRDCCommand("SQL." & CommandName, Parameters)))
 	Wait For (rs) Complete (Result As RDCResult)
 	Return Result
 End Sub

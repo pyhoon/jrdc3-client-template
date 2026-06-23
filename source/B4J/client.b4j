@@ -1,16 +1,29 @@
 ﻿AppType=JavaFX
 Build1=Default,b4j.example
-File1=MainPage.bjl
-FileGroup1=New Group
+File1=category.json
+File2=CategoryItem.bjl
+File3=icon.png
+File4=MainPage.bjl
+File5=product.json
+File6=ProductItem.bjl
+FileGroup1=Templates
+FileGroup2=Layouts
+FileGroup3=Images
+FileGroup4=Layouts
+FileGroup5=Templates
+FileGroup6=Layouts
 Group=Default Group
 Library1=b4xpages
-Library2=jcore
-Library3=jfx
-Library4=rdc_client
+Library2=b4xpreferencesdialog
+Library3=jcore
+Library4=jfx
+Library5=jokhttputils2
+Library6=rdc_client
+Library7=jrandomaccessfile
 Module1=|relative|..\B4XMainPage
 Module2=|relative|..\RDCManager
-NumberOfFiles=1
-NumberOfLibraries=4
+NumberOfFiles=6
+NumberOfLibraries=7
 NumberOfModules=2
 Version=10.5
 @EndOfDesignText@
@@ -35,6 +48,7 @@ Version=10.5
 'Step 3 - Remove #Region Create Template in .b4j
 'Step 4 - Create jRDC3 Client.b4xtemplate
 #Macro: Title, Pack jRDC3 Client.b4xtemplate, ide://run?File=%JAVABIN%\jar.exe&WorkingDirectory=..\..&Args=-cMf&Args=..\release\jRDC3+Client+(3.60).b4xtemplate&Args=B4XMainPage.bas&Args=.gitattributes&Args=B4A\$APPNAME$.*&Args=B4A\.gitignore&Args=B4A\Files&Args=B4i\$APPNAME$.*&Args=B4i\.gitignore&Args=B4i\Files&Args=B4J\$APPNAME$.*&Args=B4J\.gitignore&Args=B4J\Files&Args=Shared+Files
+#Macro: Title, Create Template, ide://run?file=%JAVABIN%\jar.exe&WorkingDirectory=..\..&args=-cMf&args=%ADDITIONAL%\..\B4X\jRDC3+Client+(3.60).b4xtemplate&args=*.bas&args=..\LICENSE&args=Shared+Files&args=B4A\*.b4*&args=B4A\Files\*.bal&args=B4A\Objects\res\drawable\icon.png&args=B4A\Starter.bas&args=B4i\*.b4*&args=B4i\Files\*.bil&args=B4J\*.b4*&args=B4J\Files\*.bjl&args=B4J\Files\icon.png
 'Step 5 - Copy to B4J Additional Libraries folder
 #Macro: Title, Copy to B4X AddLibs, ide://run?File=%COMSPEC%&Args=/c&Args=copy&Args=%PROJECT%\..\..\release\B4XPages+(GitHub).b4xtemplate&Args=%ADDITIONAL%\..\B4X
 'Step 6 - Check Release folder
