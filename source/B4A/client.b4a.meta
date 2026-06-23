@@ -7,6 +7,6 @@ ModuleBreakpoints2=
 ModuleClosedNodes0=
 ModuleClosedNodes1=
 ModuleClosedNodes2=
-NavigationStack=B4XMainPage,B4XPage_Created,20,0,RDCManager,Class_Globals,0,0,RDCManager,ExecuteQuery,16,0
+NavigationStack=B4XMainPage,B4XPage_Created,20,0,RDCManager,Class_Globals,0,0,RDCManager,ExecuteQuery,16,0,Visual Designer,MainPage.bal,-100,1,Visual Designer,CategoryItem.bal,-100,1,Visual Designer,ProductItem.bal,-100,1
 SelectedBuild=0
 VisibleModules=1,2
