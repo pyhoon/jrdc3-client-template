@@ -121,25 +121,7 @@ Private Sub SetScrollPaneBackgroundColor(View As CustomListView, Color As Int)
 	Dim V As B4XView = SP.RunMethod("lookup", Array(".viewport"))
 	V.Color = Color
 End Sub
-#End If
 
-'Sub CreateRequest As DBRequestManager
-'	Dim req As DBRequestManager
-'	req.Initialize(Me, rdcLink)
-'	Return req
-'End Sub
-
-' Do not use cmd in B4i
-' https://www.b4x.com/android/forum/threads/jrdc2-with-cmd-not-a-valid-identifier-error.102919/
-'Sub CreateCommand (Name As String, Parameters() As Object) As DBCommand
-'	Dim command As DBCommand
-'	command.Initialize
-'	command.Name = "SQL." & Name
-'	If Parameters <> Null Then command.Parameters = Parameters
-'	Return command
-'End Sub
-
-#If B4J
 Private Sub lblBack_MouseClicked (EventData As MouseEvent)
 #Else
 Private Sub lblBack_Click
@@ -193,35 +175,11 @@ Private Sub GetCategories
 	Try
 		indLoading.Show
 		clvRecord.Clear
-		'Dim req As DBRequestManager = CreateRequest
-		'Dim cmd1 As DBCommand = CreateCommand("SELECT_ALL_CATEGORIES", Null)
-		'Wait For (req.ExecuteQuery(cmd1, 0, Null)) JobDone (job As HttpJob)
-		'If job.Success Then
-			'req.HandleJobAsync(job, "req")
-			'req.PrintTable(res)
-			'Wait For (req) req_Result (res As DBResult)
-			'For Each row() As Object In res.Rows
-			'	Dim M1 As Map = CreateMap("id": row(0), "Category Name": row(1))
-			'	clvRecord.Add(CreateCategoryItems(M1, clvRecord.AsView.Width), M1)
-			'	Categories.Put(row(1), row(0))
-			'Next
 		Wait For (rdc.ExecuteQuery("SELECT_ALL_CATEGORIES", Null)) Complete (Result As RDCResult) 'queries are defined in the server config.properties file
 		If Result.Success Then
 			Log(Result.Data.ToString(0))
 			Categories.Clear
-			'If Result.Data.Size > 0 Then
-			'	
-			'End If
 			For Each row() As Object In Result.Data.IterateRows
-				'Dim Name As String = Result.Data.GetValue(0, "name")
-				'Dim id As Int = Result.Data.GetValue(0, "id")
-				'Dim blob() As Byte = Result.Data.GetValue(0, "image")
-				'If blob <> Null Then
-					'Dim img As B4XBitmap = rdc.BytesToImage(blob)
-					'
-				'End If
-				'Log(Name)
-				'Log(id)
 				Dim M1 As Map = CreateMap("id": row(0), "Category Name": row(1))
 				clvRecord.Add(CreateCategoryItems(M1, clvRecord.AsView.Width), M1)
 				Categories.Put(row(1), row(0))
@@ -238,7 +196,6 @@ Private Sub GetCategories
 	Catch
 		xui.MsgboxAsync(LastException.Message, "Error")
 	End Try
-	'job.Release
 	indLoading.Hide
 End Sub
 
@@ -246,23 +203,9 @@ Private Sub GetProducts
 	Try
 		indLoading.Show
 		clvRecord.Clear
-		'Dim req As DBRequestManager = CreateRequest
-		'Dim cmd1 As DBCommand = CreateCommand("SELECT_PRODUCT_BY_CATEGORY_ID", Array(CategoryId))
-		'Wait For (req.ExecuteQuery(cmd1, 0, Null)) JobDone (job As HttpJob)
-		'If job.Success Then
-			'req.HandleJobAsync(job, "req")
-			'Wait For (req) req_Result (res As DBResult)
-			'req.PrintTable(res)
-			'For Each row() As Object In res.Rows
-			'	Dim M2 As Map = CreateMap("id": row(0), "Category id": row(1), "Category Name": row(2), "Product Code": row(3), "Product Name": row(4), "Product Price": row(5))
-			'	clvRecord.Add(CreateProductItems(M2, clvRecord.AsView.Width), M2)
-			'Next
 		Wait For (rdc.ExecuteQuery("SELECT_PRODUCT_BY_CATEGORY_ID", Array(CategoryId))) Complete (Result As RDCResult) 'queries are defined in the server config.properties file
 		If Result.Success Then
 			Log(Result.Data.ToString(0))
-			'If Result.Data.Size > 0 Then
-			'	
-			'End If
 			For Each row() As Object In Result.Data.IterateRows
 				'Dim Name As String = Result.Data.GetValue(0, "name")
 				'Dim id As Int = Result.Data.GetValue(0, "id")
@@ -285,7 +228,6 @@ Private Sub GetProducts
 	Catch
 		xui.MsgboxAsync(LastException.Message, "Error")
 	End Try
-	'job.Release
 	indLoading.Hide
 End Sub
 
@@ -380,14 +322,6 @@ Private Sub ShowDialog1 (Action As String, Category As Map)
 	btnOk.Left = btnOk.Left - 20dip
 	Wait For (sf) Complete (Res As Int)
 	If Res = xui.DialogResponse_Positive Then
-		'If Action = "Add" Then
-		'	Dim cmd1 As DBCommand = CreateCommand("INSERT_NEW_CATEGORY", Array As Object(Category.Get("Category Name")))
-		'Else
-		'	Dim cmd1 As DBCommand = CreateCommand("UPDATE_CATEGORY_BY_ID", Array As Object(Category.Get("Category Name"), Category.Get("id")))
-		'End If
-		'Dim job As HttpJob = CreateRequest.ExecuteCommand(cmd1, Null)
-		'Wait For (job) JobDone (job As HttpJob)
-		'If job.Success Then
 		indLoading.Show
 		Dim id As Int = Category.Get("id")
 		Dim category_name As String = Category.Get("Category Name")
@@ -407,7 +341,6 @@ Private Sub ShowDialog1 (Action As String, Category As Map)
 			LogColor(Result.ErrorMessage, RED)
 			xui.MsgboxAsync(Result.ErrorMessage, Title)
 		End If
-		'job.Release
 		indLoading.Hide
 	End If
 End Sub
@@ -431,14 +364,6 @@ Private Sub ShowDialog2 (Action As String, Product As Map)
 		Dim product_name As String = Product.Get("Product Name")
 		Dim product_price As Double = Product.Get("Product Price").As(String).Replace(",", "")
 		Dim id As Int = Product.Get("id")
-		'If Action = "Add" Then
-		'	Dim cmd1 As DBCommand = CreateCommand("INSERT_NEW_PRODUCT", Array(category_id, product_code, product_name, product_price))
-		'Else
-		'	Dim cmd1 As DBCommand = CreateCommand("UPDATE_PRODUCT_BY_ID", Array(category_id, product_code, product_name, product_price, product_id))
-		'End If
-		'Dim job As HttpJob = CreateRequest.ExecuteCommand(cmd1, Null)
-		'Wait For (job) JobDone (job As HttpJob)
-		'If job.Success Then
 		If Action = "Add" Then
 			Wait For (rdc.ExecuteCommand("INSERT_NEW_PRODUCT", Array(category_id, product_code, product_name, product_price))) Complete (Result As RDCResult)
 		Else
@@ -455,7 +380,6 @@ Private Sub ShowDialog2 (Action As String, Product As Map)
 		Else
 			xui.MsgboxAsync(Result.ErrorMessage, Title)
 		End If
-		'job.Release
 		indLoading.Hide
 	End If
 End Sub
@@ -529,14 +453,6 @@ Private Sub ShowDialog3 (Item As Map)
 	If Res = xui.DialogResponse_Positive Then
 		indLoading.Show
 		Dim id As Int = Item.Get("id")
-		'If Viewing = "Product" Then
-		'	Dim cmd1 As DBCommand = CreateCommand("DELETE_PRODUCT_BY_ID", Array(Item.Get("id")))
-		'Else
-		'	Dim cmd1 As DBCommand = CreateCommand("DELETE_CATEGORY_BY_ID", Array(Item.Get("id")))
-		'End If
-		'Dim job As HttpJob = CreateRequest.ExecuteCommand(cmd1, Null)
-		'Wait For (job) JobDone (job As HttpJob)
-		'If job.Success Then
 		If Viewing = "Product" Then
 			Wait For (rdc.ExecuteCommand("DELETE_PRODUCT_BY_ID", Array(id))) Complete (Result As RDCResult)
 		Else
@@ -547,38 +463,7 @@ Private Sub ShowDialog3 (Item As Map)
 		Else
 			xui.MsgboxAsync(Result.ErrorMessage, Title)
 		End If
-		'job.Release
 		indLoading.Hide
 		btnReconnect_Click
 	End If
-End Sub
-
-
-
-Public Sub ConvertColorToHexAndARGB (Color As Int) As String
-	Private res() As Int = GetARGB(Color)
-	'Return $"${ArrayToHex(res)} ${ArrayToString(res)}"$
-	Return $"0x${Bit.ToHexString(Color).ToUpperCase} '${Color} ${ArrayToString(res)}"$
-End Sub
-
-'https://www.b4x.com/android/forum/threads/get-the-rgb-color-from-getpixel.56760/#post-357302
-Public Sub GetARGB (Color As Int) As Int()
-	Private res(4) As Int
-	res(0) = Bit.UnsignedShiftRight(Bit.And(Color, 0xff000000), 24)
-	res(1) = Bit.UnsignedShiftRight(Bit.And(Color, 0xff0000), 16)
-	res(2) = Bit.UnsignedShiftRight(Bit.And(Color, 0xff00), 8)
-	res(3) = Bit.And(Color, 0xff)
-	Return res
-End Sub
-
-Public Sub ArrayToString (res() As Int) As String
-	Return $"xui.Color_ARGB(${res(0)}, ${res(1)}, ${res(2)}, ${res(3)})"$
-End Sub
-
-Public Sub ArrayToHex (res() As Int) As String
-	Log(Bit.ToHexString(res(0)))
-	Log(Bit.ToHexString(res(1)))
-	Log(Bit.ToHexString(res(2)))
-	Log(Bit.ToHexString(res(3)))
-	Return $"0x${Bit.ToHexString(res(0))}${Bit.ToHexString(res(1))}${Bit.ToHexString(res(2))}${Bit.ToHexString(res(3))}"$
 End Sub
