@@ -22,7 +22,7 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
 - [B4X IDE](https://www.b4x.com/) (B4A, B4i, and/or B4J)
 - B4X libraries (included in B4X installation):
   - B4XPages
-  - B4XPreferencesDialog (CustomListView, B4XLoadingIndicator, XUI Views)
+  - B4XPreferencesDialog (CustomListView, B4XLoadingIndicator, XUI Views, Json, ByteConverter)
   - RDC_Client (ListOfArrays, OkHttpUtils2, RandomAccessFile)
   - IME (B4A only)
 - A running [jRDC3 server](https://github.com/pyhoon/jrdc3-server-template) (v3.60)
