@@ -5,7 +5,7 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
 ## Features
 
 - **Cross-Platform**: Single codebase for B4A (Android), B4i (iOS), and B4J (Desktop)
-- **Modern UI**: Built with [B4XPages](https://www.b4x.com/android/forum/threads/b4xpages-cross-platform-and-simple-framework-for-managing-multiple-pages.118243/) for consistent navigation and lifecycle management
+- **Modern UI**: Built with [B4XPages](https://www.b4x.com/android/forum/threads/b4x-b4xpages-cross-platform-and-simple-framework-for-managing-multiple-pages.118901/) for consistent navigation and lifecycle management
 - **Database Operations**: Complete CRUD (Create, Read, Update, Delete) for Categories and Products
 - **Async Communication**: Non-blocking HTTP requests to jRDC3 server using `Wait For` / resumable subs
 - **Batch Operations**: Execute multiple commands in a single request
