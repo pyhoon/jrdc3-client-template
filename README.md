@@ -3,7 +3,7 @@
 A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyhoon/jrdc3-server-template) which is a modified version from the original [jRDC3](https://github.com/AnywhereSoftware/B4X_Forum_Resources/tree/main/B4X/Libraries/jRDC%203%20-%20remote%20database%20connector) (Remote Database Connector version 3) created by Erel. This template provides a complete, ready-to-use foundation for building database-driven applications that work on Android, iOS, and Desktop (Windows, macOS, Linux) from a single codebase.
 
 ## Preview
-<img src="https://github.com/pyhoon/jrdc2-client-template-b4x/blob/main/B4A.png" alt="B4A" width="50%"><img src="https://github.com/pyhoon/jrdc2-client-template-b4x/blob/main/B4J.png" alt="B4J" height="350">
+<img src="https://github.com/pyhoon/jrdc2-client-template-b4x/blob/main/B4A.png" alt="B4A" height="300"><img src="https://github.com/pyhoon/jrdc2-client-template-b4x/blob/main/B4J.png" alt="B4J" height="300">
 
 ## Features
 
