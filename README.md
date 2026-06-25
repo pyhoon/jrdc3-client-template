@@ -24,7 +24,7 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
   - HttpUtils2 / OkHttpUtils2
   - B4XSerializator
   - iHttp / jHttp / Http (platform-specific)
-- A running [jRDC3 server](https://github.com/anywheresoftware/jRDC) (v3.60+)
+- A running [jRDC3 server](https://github.com/pyhoon/jrdc3-server-template) (v3.60)
 
 ## Installation
 
@@ -37,7 +37,7 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
 
 2. Restart B4X IDE
 
-3. Create new project: `File` → `New` → `New B4X Project` → Select "jRDC3 Client"
+3. Create new project: `File` → `New` → Select "jRDC3 Client"
 
 ### Option 2: Manual Setup
 
