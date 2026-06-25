@@ -143,9 +143,9 @@ End If
 
 ### Execute Batch
 ```b4x
-Dim commands As List = Array(
-    rdc.CreateRDCCommand("INSERT_NEW_CATEGORY", Array("Cat 1")),
-    rdc.CreateRDCCommand("INSERT_NEW_CATEGORY", Array("Cat 2"))
+Dim commands As List = Array( _
+rdc.CreateRDCCommand("INSERT_NEW_CATEGORY", Array("Cat 1")), _
+rdc.CreateRDCCommand("INSERT_NEW_CATEGORY", Array("Cat 2")) _
 )
 Wait For (rdc.ExecuteBatch(commands)) Complete (Result As RDCResult)
 ```
