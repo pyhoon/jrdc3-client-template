@@ -70,22 +70,22 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      B4XMainPage                             │
+│                      B4XMainPage                            │
 │  (Cross-platform UI logic using B4XPages)                   │
 ├─────────────────────────────────────────────────────────────┤
-│  CustomListView → Category/Product Items                     │
+│  CustomListView → Category/Product Items                    │
 │  PreferencesDialog → Add/Edit Forms (JSON-defined)          │
-│  B4XLoadingIndicator → Loading states                        │
+│  B4XLoadingIndicator → Loading states                       │
 ├─────────────────────────────────────────────────────────────┤
-│                      RDCManager                              │
-│  • ExecuteQuery   - Single SELECT queries                    │
-│  • ExecuteCommand - Single INSERT/UPDATE/DELETE              │
-│  • ExecuteBatch   - Multiple commands in one request         │
-│  • ImageToBytes / BytesToImage - Image serialization         │
+│                      RDCManager                             │
+│  • ExecuteQuery   - Single SELECT queries                   │
+│  • ExecuteCommand - Single INSERT/UPDATE/DELETE             │
+│  • ExecuteBatch   - Multiple commands in one request        │
+│  • ImageToBytes / BytesToImage - Image serialization        │
 ├─────────────────────────────────────────────────────────────┤
-│                    HTTP Layer (HttpJob)                      │
+│                    HTTP Layer (HttpJob)                     │
 ├─────────────────────────────────────────────────────────────┤
-│                      jRDC3 Server                            │
+│                      jRDC3 Server                           │
 └─────────────────────────────────────────────────────────────┘
 ```
 
