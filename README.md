@@ -201,7 +201,7 @@ This means you can copy, modify, distribute and perform the work, even for comme
 ## Resources
 
 - [B4X Forum - jRDC3](https://www.b4x.com/android/forum/threads/b4x-jrdc-3-remote-database-connector.171345/)
-- [B4XPages Documentation](https://www.b4x.com/android/forum/threads/b4xpages-cross-platform-and-simple-framework-for-managing-multiple-pages.118243/)
+- [B4XPages Documentation](https://www.b4x.com/android/forum/threads/b4x-b4xpages-cross-platform-and-simple-framework-for-managing-multiple-pages.118901/)
 - [B4XPreferencesDialog](https://www.b4x.com/android/forum/threads/b4xpreferencesdialog-cross-platform-forms.103842/)
 - [jRDC3 GitHub](https://github.com/AnywhereSoftware/B4X_Forum_Resources/tree/main/B4X/Libraries/jRDC%203%20-%20remote%20database%20connector)
 - [B4X Homepage](https://www.b4x.com/)
