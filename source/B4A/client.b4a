@@ -1,14 +1,16 @@
-﻿Build1=Default,b4a.example
+﻿Build1=Default,b4a.jrdc3
 File1=category.json
 File2=CategoryItem.bal
-File3=MainPage.bal
-File4=product.json
-File5=ProductItem.bal
+File3=icon.png
+File4=MainPage.bal
+File5=product.json
+File6=ProductItem.bal
 FileGroup1=Templates
 FileGroup2=Layouts
-FileGroup3=Layouts
-FileGroup4=Templates
-FileGroup5=Layouts
+FileGroup3=Default Group
+FileGroup4=Layouts
+FileGroup5=Templates
+FileGroup6=Layouts
 Group=Default Group
 Library1=b4xpages
 Library2=b4xpreferencesdialog
@@ -20,7 +22,7 @@ Library7=ime
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~SetActivityAttribute(main, android:windowSoftInputMode, adjustResize|stateHidden)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText) ' Comment this if using https protocol
 Module1=|relative|..\B4XMainPage
 Module2=|relative|..\RDCManager
-NumberOfFiles=5
+NumberOfFiles=6
 NumberOfLibraries=7
 NumberOfModules=2
 Version=13.5
@@ -31,7 +33,7 @@ Version=13.5
 'License: Unlicensed
 'Developer: Your Name
 #Region  Project Attributes
-	#ApplicationLabel: JRDC Client
+	#ApplicationLabel: JRDC3
 	#VersionCode: 6
 	#VersionName: 3.6.0
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
