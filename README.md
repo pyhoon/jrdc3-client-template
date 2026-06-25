@@ -1,6 +1,6 @@
 # jRDC3 Client Template for B4X
 
-A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyhoon/jrdc3-server-template) which is a modified version from the original [jRDC3 Server](https://github.com/AnywhereSoftware/B4X_Forum_Resources/tree/main/B4X/Libraries/jRDC%203%20-%20remote%20database%20connector) (Remote Database Connector version 3) created by Erel. This template provides a complete, ready-to-use foundation for building database-driven applications that work on Android, iOS, and Desktop (Windows, macOS, Linux) from a single codebase.
+A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyhoon/jrdc3-server-template) which is a modified version from the original [jRDC3](https://github.com/AnywhereSoftware/B4X_Forum_Resources/tree/main/B4X/Libraries/jRDC%203%20-%20remote%20database%20connector) (Remote Database Connector version 3) created by Erel. This template provides a complete, ready-to-use foundation for building database-driven applications that work on Android, iOS, and Desktop (Windows, macOS, Linux) from a single codebase.
 
 ## Preview
 <img src="https://github.com/pyhoon/jrdc2-client-template-b4x/blob/main/B4A.png" alt="B4A" width="50%"><img src="https://github.com/pyhoon/jrdc2-client-template-b4x/blob/main/B4J.png" alt="B4J" height="350">
@@ -21,32 +21,19 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
 
 - [B4X IDE](https://www.b4x.com/) (B4A, B4i, and/or B4J)
 - B4X libraries (included in B4X installation):
-  - XUI
-  - XUI Views (CustomListView, B4XLoadingIndicator, PreferencesDialog)
-  - B4XCollections
-  - HttpUtils2 / OkHttpUtils2
-  - B4XSerializator
-  - iHttp / jHttp / Http (platform-specific)
+  - B4XPages
+  - B4XPreferencesDialog (CustomListView, B4XLoadingIndicator, XUI Views)
+  - RDC_Client (ListOfArrays, OkHttpUtils2, RandomAccessFile)
+  - IME (B4A only)
 - A running [jRDC3 server](https://github.com/pyhoon/jrdc3-server-template) (v3.60)
 
 ## Installation
 
-### Option 1: Use as B4X Template (Recommended)
-
-1. Copy the `.b4xtemplate` file from the `release` folder to your B4X templates folder:
-   - **Windows**: `%APPDATA%\Anywhere Software\B4X\Templates`
-   - **macOS**: `~/Library/Application Support/Anywhere Software/B4X/Templates`
-   - **Linux**: `~/.config/Anywhere Software/B4X/Templates`
-
-2. Restart B4X IDE
-
-3. Create new project: `File` → `New` → Select "jRDC3 Client"
-
-### Option 2: Manual Setup
-
-1. Clone or download this repository
-2. Open the desired platform project in `source/B4A`, `source/B4i`, or `source/B4J`
-3. Update the server URL in `B4XMainPage.bas`:
+1. Download the latest `jRDC3 Client (3.60).b4xtemplate` file from `release` folder.
+2. Put the downloaded `.b4xtemplate` file inside your `B4X Additional Libraries` folder configured in the IDE `Paths Configuration`.
+3. In the B4X IDE, go to `File` → `New` → Select `jRDC3 Client (3.60)`.
+4. Provide your `Project Folder` and `Project Name` then click button OK.
+5. Update the ServerUrl in `B4XMainPage.bas`:
    ```b4x
    Private Const ServerUrl As String = "http://YOUR_SERVER_IP:17178/rdc"
    ```
@@ -65,9 +52,9 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
    sql.DELETE_PRODUCT_BY_ID=DELETE FROM products WHERE id = ?
    ```
 
-2. **Update Server URL**: In `B4XMainPage.bas`, change the `ServerUrl` constant to point to your jRDC3 server
+3. **Update Server URL**: In `B4XMainPage.bas`, change the `ServerUrl` constant to point to your jRDC3 server
 
-3. **Run**: Build and run on your target platform
+4. **Run**: Build and run on your target platform
 
 ## Architecture
 
