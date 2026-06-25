@@ -23,17 +23,18 @@ A cross-platform client template for [jRDC3 Server v3.60](https://github.com/pyh
 - B4X libraries (included in B4X installation):
   - B4XPages
   - B4XPreferencesDialog (CustomListView, B4XLoadingIndicator, XUI Views, Json, ByteConverter)
-  - RDC_Client (ListOfArrays, OkHttpUtils2, RandomAccessFile)
   - IME (B4A only)
+  - RDC_Client (ListOfArrays, OkHttpUtils2, RandomAccessFile)
 - A running [jRDC3 server](https://github.com/pyhoon/jrdc3-server-template) (v3.60)
 
 ## Installation
 
-1. Download the latest `jRDC3 Client (3.60).b4xtemplate` file from [release](https://github.com/pyhoon/jrdc3-client-template/tree/main/release) folder.
-2. Put the downloaded `.b4xtemplate` file inside your `B4X Additional Libraries` folder configured in the IDE `Paths Configuration`.
-3. In the B4X IDE, go to `File` → `New` → Select `jRDC3 Client (3.60)`.
-4. Provide your `Project Folder` and `Project Name` then click button OK.
-5. Update the ServerUrl in `B4XMainPage.bas`:
+1. Download the latest `jRDC3 Client (3.60).b4xtemplate` from [release](https://github.com/pyhoon/jrdc3-client-template/tree/main/release) folder.
+2. Download `RDC_Client.b4xlib` from [B4X Forum](https://www.b4x.com/android/forum/threads/b4x-jrdc-3-remote-database-connector.171345/).
+3. Put the downloaded `.b4xtemplate` and `.b4xlib` files inside your `B4X Additional Libraries` folder configured in the IDE `Paths Configuration`.
+4. In the targeted platform IDE (e.g B4A), go to `File` → `New` → Select `jRDC3 Client (3.60)`.
+5. Provide your `Project Folder` and `Project Name` then click button OK.
+6. Update the ServerUrl in `B4XMainPage.bas`:
    ```b4x
    Private Const ServerUrl As String = "http://YOUR_SERVER_IP:17178/rdc"
    ```
