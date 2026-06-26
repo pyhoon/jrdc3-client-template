@@ -1,5 +1,5 @@
 ﻿AppType=JavaFX
-Build1=Default,b4j.example
+Build1=Default,b4j.jrdc3
 File1=category.json
 File2=CategoryItem.bjl
 File3=icon.png
