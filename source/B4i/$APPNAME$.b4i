@@ -13,13 +13,11 @@ Group=Default Group
 Library1=b4xpages
 Library2=b4xpreferencesdialog
 Library3=icore
-Library4=ihttputils2
-Library5=rdc_client
-Library6=irandomaccessfile
+Library4=rdc_client
 Module1=|relative|..\B4XMainPage
 Module2=|relative|..\RDCManager
 NumberOfFiles=5
-NumberOfLibraries=6
+NumberOfLibraries=4
 NumberOfModules=2
 Version=8.8
 @EndOfDesignText@
